@@ -8,10 +8,10 @@ namespace yidas\helpers;
  * Providing route information and validation.
  *
  * @author      Nick Tsai <myintaer@gmail.com>
- * @version     1.0.0
+ * @version     1.1.0
  * @example
- * 	\yidas\helpers\Route::in('site');		// True for site/*
- * 	\yidas\helpers\Route::is('site/index');	// True for site/index
+ *  \yidas\helpers\Route::in('site');       // True for site/*
+ *  \yidas\helpers\Route::is('site/index'); // True for site/index
  */
 
 use Yii;
@@ -25,7 +25,26 @@ class Route
      */
     public static function get()
     {
-    	return Yii::$app->controller->getRoute();
+        return Yii::$app->controller->getRoute();
+    }
+
+    /**
+     * Get route from specified level
+     *
+     * @param int $level Route level separated by slash
+     * @return string
+     */
+    public static function getByLevel($level=1)
+    {
+        $routeArray = explode('/', self::get());
+
+        $maxLevel = count($routeArray);
+
+        $level = $level>=1 && $level<=$maxLevel ? (int)$level : $maxLevel;
+
+        array_splice($routeArray, $level);
+
+        return implode('/', $routeArray);
     }
 
     /**
