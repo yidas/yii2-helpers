@@ -63,8 +63,8 @@ class Navigation
      * @param string $location Target location
      * @return boolean
      */
-    public static function is($location) {
-
+    public static function is($location)
+    {
         return self::$location==$location ? true : false;
     }
 
@@ -74,8 +74,8 @@ class Navigation
      * @param string $location Target location
      * @return boolean
      */
-    public static function in($location) {
-
+    public static function in($location)
+    {
         return strpos(self::$location, $location)===0 ? true : false;
     }
 }

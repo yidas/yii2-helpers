@@ -18,7 +18,6 @@ use yii\helpers\Url;
 
 class RouteJS
 {
-	
 	/**
 	 * Go to route using Url::to with optional alert() function
 	 *
