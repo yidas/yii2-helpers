@@ -10,8 +10,10 @@ namespace yidas\helpers;
  * @author      Nick Tsai <myintaer@gmail.com>
  * @version     1.1.0
  * @example
- *  \yidas\helpers\Route::in('site');       // True for site/*
- *  \yidas\helpers\Route::is('site/index'); // True for site/index
+ *  Route::in('site');          // True for site/*
+ *  Route::is('site/index');    // True for site/index
+ *  Route::get();               // get such as 'site/index'
+ *  Route::getByLevel(1);       // get 'site' from 'site/index'
  */
 
 use Yii;
@@ -29,7 +31,7 @@ class Route
     }
 
     /**
-     * Get route from specified level
+     * Get route splitting from specified level
      *
      * @param int $level Route level separated by slash
      * @return string
