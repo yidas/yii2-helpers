@@ -31,3 +31,22 @@ $ php composer.phar require yidas/yii2-helpers
 
 - ####`RouteJS`  
   Redirector by JS base calling in Controller
+  
+---
+
+## Helper: Route
+
+Usage: (Supposing the current controller route is 'site/index')
+
+```
+Route::in('site');          // True for site/*
+Route::is('site/index');    // True for site/index
+Route::get();               // Get such as 'site/index'
+Route::getByLevel(1);       // Get 'site' from 'site/index'
+
+// Root Level usage for filtering prefix from route
+Route::setRootLevel(1);     // Set the rootLevel to 1
+Route::get();               // Get 'index' from 'site/index' 
+Route::setRootLevel();      // Get the rootLevel back to 0
+Route::get();               // Get 'site/index' from 'site/index'
+```
