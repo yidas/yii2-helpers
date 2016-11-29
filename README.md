@@ -50,3 +50,16 @@ Route::get();               // Get 'index' from 'site/index'
 Route::setRootLevel();      // Get the rootLevel back to 0
 Route::get();               // Get 'site/index' from 'site/index'
 ```
+Example in View:
+
+```
+<ul class="sidebar-menu">
+  <li class="<?php if(Route::in('site')):?>active<?php endif ?> treeview">
+    <a href="#">SITE控制器</a>
+    <ul class="treeview-menu">
+      <li class="<?php if(Route::is('site/index')):?>active<?php endif ?>"><a href="<?=Url::to(['site/index'])?>">列表</a></li>
+      <li class="<?php if(Route::is('site/create')):?>active<?php endif ?>"><a href="<?=Url::to(['site/create'])?>">新增</a></li>
+    </ul>
+  </li>
+</ul>
+```
