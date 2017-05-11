@@ -8,12 +8,10 @@ namespace yidas\helpers;
  * Real IP getting function including.
  *
  * @author 		Nick Tsai <myintaer@gmail.com>
- * @version 	1.0.0
+ * @version 	1.0.1
  * @example
  * 	$ip = \yidas\helpers\IP::get();
  */
-
-use yii\helpers\Url;
 
 class IP
 {
@@ -24,18 +22,20 @@ class IP
 	 */
 	public static function get()
 	{
-		$clientIP  = @$_SERVER['HTTP_CLIENT_IP'];
-	    $forwardIP = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-	    $remoteIP  = $_SERVER['REMOTE_ADDR'];
+	    $remoteIP  = (isset($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : NULL;
 
-	    if (filter_var($clientIP, FILTER_VALIDATE_IP)) {
+	    if (isset($_SERVER['HTTP_CLIENT_IP'])) {
 	    	
-	    	return $clientIP;
-	    } 
-	    elseif (filter_var($forwardIP, FILTER_VALIDATE_IP)) {
-	    	
-	    	return $forwardIP;
-	    } 
+	    	return filter_var($_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP) 
+	    		? $_SERVER['HTTP_CLIENT_IP'] 
+	    		: $remoteIP;
+	    }
+	    elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+
+	    	return filter_var($_SERVER['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP) 
+	    		? $_SERVER['HTTP_X_FORWARDED_FOR'] 
+	    		: $remoteIP;
+	    }
 
 	    return $remoteIP;
 	}
