@@ -32,6 +32,9 @@ $ php composer.phar require yidas/yii2-helpers
 - ####`RouteJS`  
   Redirector by JS base calling in Controller
   
+- ####`IP`  
+  This helper will get the remote IP address by setting directly access or proxy access, to prevent client header modified attack.
+  
 ---
 
 ## Helper: Route
