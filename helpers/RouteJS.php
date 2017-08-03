@@ -10,8 +10,8 @@ namespace yidas\helpers;
  * @author 		Nick Tsai <myintaer@gmail.com>
  * @version 	1.0.0
  * @example
- * 	\yidas\helpers\RouteJS::redirect(['index', 'status'=>'1'], 'Success!');
- * 	\yidas\helpers\RouteJS::goBack('Go back success!');
+ * 	RouteJS::redirect(['index', 'status'=>'1'], 'Success!');
+ * 	RouteJS::goBack('Go back success!');
  */
 
 use yii\helpers\Url;
@@ -19,9 +19,9 @@ use yii\helpers\Url;
 class RouteJS
 {
 	/**
-	 * Go to route using Url::to with optional alert() function
+	 * Redirect to the specified route with optional alert() function
 	 *
-	 * @param mixed $route Yii's route name for \yii\helpers\Url::to().
+	 * @param mixed $route Yii's route name by \yii\helpers\Url::to().
 	 * @param string $alertMsg Showing JS alert message if needed.
 	 */
 	public static function to($route=NULL, $alertMsg=NULL)
