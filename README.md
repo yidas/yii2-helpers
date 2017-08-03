@@ -1,12 +1,21 @@
-# yii2-helpers
+Yii2 Helpers
+============
 
 Collection of useful helpers for Yii Framework 2.0
 
 ---
 
-## Installation
+INSTALLATION
+------------
 
-In yii2 composer.json, additional require yidas/yii2-helpers.
+Install from composer command:
+
+```
+$ php composer.phar require yidas/yii2-helpers
+```
+
+Or, in yii2 `composer.json`, manually require yidas/yii2-helpers.
+
 ```
 "require": {
         ...
@@ -14,32 +23,29 @@ In yii2 composer.json, additional require yidas/yii2-helpers.
     },
 ```
 
-Or, install from composer command:
-```
-$ php composer.phar require yidas/yii2-helpers
-```
-
 ---
 
-## Helper list
+HELPERS
+-------
 
-- `Navigation`  
+- Navigation 
   Web locator saving location and providing validation.
 
-- `Route`  
+- [Route](#route)
   Providing route information and validation.
 
-- `RouteJS`  
+- RouteJS
   Redirector by JS base calling in Controller
   
-- `IP`  
-  This helper will get the remote IP address by setting directly access or proxy access, to prevent client header modified attack.
-  
+
 ---
 
-## Helper: Route
+DOCUMENTATION
+-------------
 
-Usage: (Supposing the current controller route is 'site/index')
+### Route
+
+#### Usage: (Supposing the current controller route is 'site/index')
 
 ```
 Route::in('site');          // True for site/*
@@ -53,7 +59,8 @@ Route::get();               // Get 'index' from 'site/index'
 Route::setRootLevel();      // Get the rootLevel back to 0
 Route::get();               // Get 'site/index' from 'site/index'
 ```
-Example in View:
+
+#### Example in View:
 
 ```
 <ul class="sidebar-menu">
