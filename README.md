@@ -28,13 +28,13 @@ Or, in yii2 `composer.json`, manually require yidas/yii2-helpers.
 HELPERS
 -------
 
-- Navigation 
+- **Navigation**  
   Web locator saving location and providing validation.
 
-- [Route](#route)
+- **[Route](#route)**   
   Providing route information and validation.
 
-- RouteJS
+- **RouteJS**  
   Redirector by JS base calling in Controller
   
 
