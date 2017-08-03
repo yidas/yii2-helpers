@@ -3,6 +3,18 @@ Yii2 Helpers
 
 Collection of useful helpers for Yii Framework 2.0
 
+HELPERS
+-------
+
+- **Navigation**  
+  Web locator saving location and providing validation.
+
+- **[Route](#route)**   
+  Validate current route status belonging to the given scope.
+
+- **RouteJS**  
+  Redirector by JS base calling in Controller
+  
 ---
 
 INSTALLATION
@@ -22,20 +34,6 @@ Or, in yii2 `composer.json`, manually require yidas/yii2-helpers.
         "yidas/yii2-helpers": "*"
     },
 ```
-
----
-
-HELPERS
--------
-
-- **Navigation**  
-  Web locator saving location and providing validation.
-
-- **[Route](#route)**   
-  Validate current route status belonging to the given scope.
-
-- **RouteJS**  
-  Redirector by JS base calling in Controller
   
 
 ---
