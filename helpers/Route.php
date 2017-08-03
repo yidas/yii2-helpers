@@ -5,7 +5,7 @@ namespace yidas\helpers;
 /**
  * Route Helper for yii2
  * 
- * Providing route information and validation.
+ * Validate current route status belonging to the given scope
  *
  * @author      Nick Tsai <myintaer@gmail.com>
  * @version     1.2.0
