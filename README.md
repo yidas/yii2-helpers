@@ -63,10 +63,10 @@ Route::get();               // Get 'site/index' from 'site/index'
 ```
 <ul class="sidebar-menu">
   <li class="<?php if(Route::in('site')):?>active<?php endif ?> treeview">
-    <a href="#">SITE控制器</a>
+    <a href="#">SITE MENU</a>
     <ul class="treeview-menu">
-      <li class="<?php if(Route::is('site/index')):?>active<?php endif ?>"><a href="<?=Url::to(['site/index'])?>">列表</a></li>
-      <li class="<?php if(Route::is('site/create')):?>active<?php endif ?>"><a href="<?=Url::to(['site/create'])?>">新增</a></li>
+      <li class="<?php if(Route::is('site/index')):?>active<?php endif ?>"><a href="<?=Url::to(['site/index'])?>">Menu List</a></li>
+      <li class="<?php if(Route::is('site/create')):?>active<?php endif ?>"><a href="<?=Url::to(['site/create'])?>">Add One</a></li>
     </ul>
   </li>
 </ul>
