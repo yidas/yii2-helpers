@@ -32,7 +32,7 @@ HELPERS
   Web locator saving location and providing validation.
 
 - **[Route](#route)**   
-  Providing route information and validation.
+  Validate current route status belonging to the given scope.
 
 - **RouteJS**  
   Redirector by JS base calling in Controller
