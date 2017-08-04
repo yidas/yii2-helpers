@@ -45,7 +45,7 @@ DOCUMENTATION
 
 #### Usage: (Supposing the current controller route is 'site/index')
 
-```
+```php
 Route::in('site');          // True for site/*
 Route::is('site/index');    // True for site/index
 Route::get();               // Get such as 'site/index'
@@ -60,7 +60,7 @@ Route::get();               // Get 'site/index' from 'site/index'
 
 #### Example in View:
 
-```
+```php
 <ul class="sidebar-menu">
   <li class="<?php if(Route::in('site')):?>active<?php endif ?> treeview">
     <a href="#">SITE MENU</a>
@@ -77,7 +77,7 @@ Route::get();               // Get 'site/index' from 'site/index'
 ### RouteJS
 
 #### Redirect to the route in Controller with JavaScript alert:
-```
+```php
 public function actionStore()
 {
     // Code...
@@ -86,7 +86,7 @@ public function actionStore()
 ```
 
 #### GoBack to previous page in Controller with JavaScript alert:
-```
+```php
 public function actionStore()
 {
     // Code...
