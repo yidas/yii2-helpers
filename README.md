@@ -6,14 +6,14 @@ Collection of useful helpers for Yii Framework 2.0
 HELPERS
 -------
 
-- **Navigation**  
-  Web locator saving location and providing validation.
-
 - **[Route](#route)**   
   Validate current route status belonging to the given scope.
 
 - **RouteJS**  
   Redirector by JS base calling in Controller
+  
+- **Navigation**  
+  Web locator saving location and providing validation.
   
 ---
 
@@ -70,4 +70,26 @@ Route::get();               // Get 'site/index' from 'site/index'
     </ul>
   </li>
 </ul>
+```
+
+---
+
+### RouteJS
+
+#### Redirect to the route in Controller with JavaScript alert:
+```
+public function actionStore()
+{
+    // Code...
+    return RouteJS::redirect(['index', 'status'=>'1'], 'Stroed success!');
+}
+```
+
+#### GoBack to previous page in Controller with JavaScript alert:
+```
+public function actionStore()
+{
+    // Code...
+    return RouteJS::goBack('Stroed failed! Return back.');
+}
 ```
