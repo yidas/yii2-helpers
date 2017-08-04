@@ -9,7 +9,7 @@ HELPERS
 - **[Route](#route)**   
   Validate current route status belonging to the given scope.
 
-- **RouteJS**  
+- **[RouteJS](#routejs)**  
   Redirector by JS base calling in Controller
   
 - **Navigation**  
