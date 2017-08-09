@@ -1,5 +1,5 @@
-Yii2 Helpers
-============
+*Yii 2 Helpers*
+===============
 
 Collection of useful helpers for Yii Framework 2.0
 
