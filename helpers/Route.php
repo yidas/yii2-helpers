@@ -8,7 +8,7 @@ namespace yidas\helpers;
  * Validate current route status belonging to the given scope
  *
  * @author      Nick Tsai <myintaer@gmail.com>
- * @version     1.2.0
+ * @version     1.3.0
  * @example
  *  Route::in('site');          // True for site/*
  *  Route::is('site/index');    // True for site/index
@@ -47,19 +47,21 @@ class Route
         // If there is no cahce, build a new one
         if (!self::$routeCache) {
             
-            self::$routeCache = Yii::$app->controller->getRoute();
+            $route = Yii::$app->controller->getRoute();
 
             if (self::$rootLevel) {
                 
                 if (self::$rootLevel==1) {
                     
-                    self::$routeCache = substr(self::$routeCache, strpos(self::$routeCache, '/')+1);
+                    $route = substr($route, strpos($route, '/')+1);
 
                 } else {
 
-                    self::$routeCache = substr(self::$routeCache, strlen(self::getByLevel(self::$rootLevel))+1);
+                    $route = substr($route, strlen(self::getByLevel(self::$rootLevel))+1);
                 }
             }
+
+            self::$routeCache = $route;
         }
 
         return self::$routeCache;
@@ -105,7 +107,7 @@ class Route
      */
     public static function is($route)
     {
-        $route = is_string($route) ? $route : NULL;
+        $route = self::stripRoute($route);
 
         return self::get()==$route ? true : false;
     }
@@ -118,7 +120,7 @@ class Route
      */
     public static function in($route)
     {
-        $route = is_string($route) ? $route : NULL;
+        $route = self::stripRoute($route);
 
         return strpos(self::get(), $route)===0 ? true : false;
     }
@@ -131,8 +133,32 @@ class Route
      */
     public static function match($route)
     {
-        $route = is_string($route) ? $route : NULL;
+        $route = self::stripRoute($route);
 
         return strpos(self::get(), $route)!==false ? true : false;
+    }
+
+    /**
+     * Strip Route string
+     *
+     * @param string $route
+     * @return string Standard route string
+     */
+    public function stripRoute($route)
+    {
+        if (!is_string($route)) {
+
+            return '';
+        }
+
+        $route = trim($route);
+
+        // Strip DIRECTORY_SEPARATOR
+        if (strpos($route, DIRECTORY_SEPARATOR)===0) {
+            
+            $route = substr($route, 1);
+        }
+
+        return $route;
     }
 }
