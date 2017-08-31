@@ -8,6 +8,10 @@
 
 Collection of useful helpers for Yii Framework 2.0
 
+[![Latest Stable Version](https://poser.pugx.org/yidas/yii2-helpers/v/stable?format=flat-square)](https://packagist.org/packages/yidas/yii2-helpers)
+[![Latest Unstable Version](https://poser.pugx.org/yidas/yii2-helpers/v/unstable?format=flat-square)](https://packagist.org/packages/yidas/yii2-helpers)
+[![License](https://poser.pugx.org/yidas/yii2-helpers/license?format=flat-square)](https://packagist.org/packages/yidas/yii2-helpers)
+
 HELPERS
 -------
 
